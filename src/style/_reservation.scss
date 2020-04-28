@@ -1,0 +1,40 @@
+.reservation {
+  position: relative;
+  transform: translateY(35px);
+  //for some reason i there is some gap with picture tag
+
+  @include min-width(small) {
+    transform: translateY(6px);
+  }
+  @include min-width(medium) {
+    transform: translateY(6px);
+  }
+
+  & .bg-upperfooter {
+    width: 100%;
+  }
+  .reservation-text {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    @include min-width(small) {
+      width: 100%;
+    }
+    @include min-width(large) {
+      top: 20%;
+      left: 0;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+    & h2 {
+      @include header-2;
+      color: #ffff;
+    }
+    & button {
+      @include button-on-dark;
+    }
+  }
+}

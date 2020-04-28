@@ -1,0 +1,162 @@
+.image-slider {
+  width: 85%;
+  margin: 7rem auto;
+  position: relative;
+
+  @include min-width(small) {
+    margin: 7rem auto 8rem auto;
+  }
+
+  @include min-width(large) {
+    margin: auto;
+    height: 60rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .btn-group {
+    margin-top: 4rem;
+
+    @include min-width(small) {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 3rem auto 0 auto;
+    }
+    @include min-width(large) {
+      position: absolute;
+      flex-direction: column;
+      width: 200px;
+      right: 0;
+      margin: 0;
+      left: calc(0% + 666px);
+      top: 27rem;
+      align-items: flex-start;
+    }
+
+    & .btn-slider {
+      display: block;
+      position: relative;
+      padding-bottom: 1.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 600;
+      font-size: calc(0.75rem + 0.75vw);
+      line-height: 130%;
+      letter-spacing: 0.75px;
+      color: $shuttleGray;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all 0.5s ease-in-out;
+
+      @include min-width(small) {
+        font-size: 15px;
+      }
+
+      &:hover {
+        color: black;
+        opacity: 1;
+      }
+    }
+  }
+
+  & .text-slider {
+    text-align: center;
+    margin: 1rem auto 2rem;
+    position: relative;
+    @include min-width(large) {
+      margin: 0;
+      display: flex;
+    }
+
+    & .img-slider {
+      width: 100%;
+      box-shadow: $box-shadow;
+      @include min-width(small) {
+        width: 70%;
+      }
+      @include min-width(large) {
+        width: unset;
+        height: unset;
+      }
+    }
+
+    & h2 {
+      @include header-2;
+      margin-top: 2.5rem;
+
+      @include min-width(small) {
+        margin-top: 1.5rem;
+      }
+      @include min-width(large) {
+        margin-top: 0;
+      }
+    }
+
+    & p {
+      @include body-1;
+      @include min-width(small) {
+        max-width: 460px;
+        margin: auto;
+      }
+      @include min-width(large) {
+        max-width: 549px;
+      }
+    }
+
+    & button {
+      @include button-on-ligth;
+    }
+  }
+}
+
+.active {
+  left: 40% !important;
+  right: 40% !important;
+  z-index: -1;
+  @include min-width(small) {
+    left: 19% !important;
+    right: 19% !important;
+  }
+  @include min-width(large) {
+    left: -86% !important;
+    right: 107% !important;
+    top: 17% !important;
+  }
+}
+
+.container-1 {
+  @include min-width(large) {
+    display: flex;
+  }
+}
+
+.container {
+  grid-row: span 3/4 !important;
+  @include min-width(large) {
+    text-align: left;
+    margin: 3rem 0 0 11%;
+  }
+}
+
+.line-2 {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 52%;
+  height: 1.5px;
+  background-color: #9e7f66;
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  @include min-width(large) {
+    left: 50%;
+    right: 100%;
+    top: 17%;
+  }
+}
+
+.black {
+  color: black !important;
+  opacity: 1 !important;
+}

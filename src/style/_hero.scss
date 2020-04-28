@@ -1,0 +1,90 @@
+.hero {
+  position: relative;
+  @include min-width(small) {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 35%;
+      width: 60%;
+      left: -12%;
+      bottom: -44.5%;
+      z-index: 15;
+      background: url('/images/patterns/pattern-curve-top-right.svg');
+    }
+  }
+  @include min-width(large) {
+    &:before {
+      content: '';
+      height: 37%;
+      width: 100%;
+      left: 0%;
+      bottom: -65.5%;
+      background: url('/images/patterns/pattern-curve-top-right.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.text-hero {
+  position: absolute;
+  top: 30%;
+  left: 5.5%;
+  right: 5.5%;
+  text-align: center;
+
+  @include min-width(small) {
+    top: 35%;
+    padding: 0 2rem;
+    max-width: 590px;
+    margin: auto;
+  }
+  @include min-width(large) {
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    left: 0;
+    right: 0;
+    max-width: 80%;
+  }
+  & h1 {
+    @include header-1;
+    @include min-width(small) {
+      max-width: 400px;
+      margin: 1.85rem auto 0 auto;
+    }
+    @include min-width(large) {
+      width: 63%;
+      max-width: 550px;
+      margin: 1.85rem auto 0 0;
+    }
+  }
+
+  & p {
+    @include body-1;
+    color: #fff;
+    margin-top: 1.7rem;
+    @include min-width(large) {
+      max-width: 550px;
+      font-size: 19px;
+    }
+  }
+
+  & .btn-on-dark {
+    @include button-on-dark;
+    margin-top: 2rem;
+  }
+}
+
+.logo {
+  @include min-width(large) {
+    position: absolute;
+    top: 5rem;
+  }
+}
+
+.hero-bg {
+  width: 100%;
+}

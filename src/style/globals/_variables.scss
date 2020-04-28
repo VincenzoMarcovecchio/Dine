@@ -1,0 +1,172 @@
+$breakpoints: (
+  small: 500px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 2048px,
+);
+
+@mixin min-width($size) {
+  $breakpoint-value: map-get($breakpoints, $size);
+  @media screen and (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin max-width($size) {
+  $breakpoint-value: map-get($breakpoints, $size);
+  @media screen and (max-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin header-1 {
+  font-weight: 300;
+  font-size: calc(1.55rem + 0.75vw);
+  line-height: 129%;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-top: 1.85rem;
+  @include min-width(small) {
+    letter-spacing: 3.5px;
+    font-size: calc(1.85rem + 0.75vw);
+  }
+  @include min-width(medium) {
+    font-size: calc(2.7rem + 0.75vw);
+  }
+}
+
+@mixin header-2 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  @include min-width(small) {
+    font-size: calc(1.95rem + 0.75vw);
+  }
+  @include min-width(large) {
+    font-size: 40px;
+    margin: 2.5rem auto 1.7rem auto;
+  }
+}
+
+@mixin header-3L {
+  font-weight: 700;
+  font-size: calc(1rem + 0.75vw);
+  line-height: 130%;
+  letter-spacing: 0.4px;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  @include min-width(small) {
+    font-size: calc(16px + 0.75vw);
+  }
+  @include min-width(large) {
+    font-size: 18px;
+  }
+}
+
+@mixin header-3S {
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 28px;
+  letter-spacing: 2px;
+}
+
+@mixin button-on-ligth {
+  width: 13rem;
+  height: 3.7rem;
+  border: 1.4px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: $codGray;
+  font-family: 'Spartan', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1.1px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+  margin-top: 2rem;
+
+  &:hover {
+    background-color: transparent;
+    color: $codGray;
+    border: 1.4px solid $codGray;
+  }
+}
+
+@mixin button-on-dark {
+  width: 15.5rem;
+  height: 4em;
+  border: 1.4px solid rgba(255, 255, 255, 0.993);
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Spartan', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.993);
+    color: black;
+  }
+}
+
+// a {
+//   @include button-on-dark;
+// }
+
+@mixin body-1 {
+  font-weight: 400;
+  font-size: calc(12.3px + 0.75vw);
+  line-height: 160%;
+  letter-spacing: 0.3px;
+  @include min-width(large) {
+    font-size: 18px;
+  }
+}
+
+@mixin body-2 {
+  font-weight: 400;
+  font-size: calc(12px + 0.75vw);
+  line-height: 160%;
+  letter-spacing: 0.3px;
+  color: #fff;
+  @include min-width(small) {
+    font-size: calc(11px + 0.75vw);
+  }
+  @include min-width(large) {
+    font-size: 0.9rem;
+  }
+}
+
+//primary
+$beaver: #9e7f66;
+$codGray: #111111;
+
+//secondary
+$mirage: #17192b;
+$ebonyClay: #242b37;
+$shuttleGray: #5c6779;
+
+$box-shadow: 0px 54px 74px -50px $shuttleGray;
+
+.line {
+  color: $beaver;
+  position: relative;
+  margin-left: -45px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 9px;
+    width: 55px;
+    height: 1.25px;
+    background-color: $beaver;
+  }
+
+  @include min-width(large) {
+    margin-left: 0;
+  }
+}

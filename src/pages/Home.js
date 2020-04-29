@@ -27,27 +27,27 @@ export default function Home() {
     if (e.target.id === 'gathering') {
       setimg(gatheringimg);
       settext(gatheringtext);
-      line[0].classList.add('active');
-      line[1].classList.remove('active');
-      line[2].classList.remove('active');
+      line[0].classList.add('actives');
+      line[1].classList.remove('actives');
+      line[2].classList.remove('actives');
       gathering.classList.add('black');
       special.classList.remove('black');
       social.classList.remove('black');
     } else if (e.target.id === 'special') {
       setimg(specialimg);
       settext(specialtext);
-      line[0].classList.remove('active');
-      line[1].classList.add('active');
-      line[2].classList.remove('active');
+      line[0].classList.remove('actives');
+      line[1].classList.add('actives');
+      line[2].classList.remove('actives');
       gathering.classList.remove('black');
       special.classList.add('black');
       social.classList.remove('black');
     } else {
       setimg(socialimg);
       settext(socialtext);
-      line[0].classList.remove('active');
-      line[1].classList.remove('active');
-      line[2].classList.add('active');
+      line[0].classList.remove('actives');
+      line[1].classList.remove('actives');
+      line[2].classList.add('actives');
       gathering.classList.remove('black');
       special.classList.remove('black');
       social.classList.add('black');
@@ -55,7 +55,7 @@ export default function Home() {
   };
 
   const click = (e) => {
-    e.target.classList.add('active');
+    e.target.classList.add('actives');
   };
 
   const [img, setimg] = useState(gatheringimg);

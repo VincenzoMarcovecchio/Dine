@@ -3,9 +3,8 @@ import './style/style.css';
 import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import myfunction from './Function';
+import 'materialize-css/dist/css/materialize.min.css';
 function App() {
-  document.body.addEventListener('nv-enter', myfunction);
   return (
     <>
       <Switch>

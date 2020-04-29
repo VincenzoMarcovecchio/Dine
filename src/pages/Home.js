@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+
 import {
   gatheringtext,
   gatheringimg,
@@ -241,7 +242,7 @@ export default function Home() {
               id='gathering'
               className='black btn-slider'
             >
-              <span className='line-2 active'></span>
+              <span className='line-2 actives'></span>
               family gathering
             </span>
             <span onClick={handleChange} id='special' className='btn-slider'>

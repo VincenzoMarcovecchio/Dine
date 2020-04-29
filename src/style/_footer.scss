@@ -1,7 +1,7 @@
 footer {
   background-color: $codGray;
   text-transform: uppercase;
-  display: grid;
+  display: grid !important;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 100px);
   row-gap: 30px;
@@ -17,7 +17,7 @@ footer {
   }
   @include min-width(small) {
     height: 22rem;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 40% 60%;
     text-align: left;
     grid-template-rows: repeat(2, min-content);
     margin: 0;

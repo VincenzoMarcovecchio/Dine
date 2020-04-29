@@ -3,7 +3,7 @@ import React from 'react';
 export default function Footer() {
   return (
     <>
-      <footer>
+      <footer className='footer'>
         <img src='/images/icons/logo.svg' />
         <div>
           Marthwaite, Sedbergh <br /> Cumbria <br /> +00 44 123 4567

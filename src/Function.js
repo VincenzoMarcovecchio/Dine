@@ -29,7 +29,7 @@ export const gatheringimg = () => {
 export const gatheringtext = () => {
   return (
     <>
-      <div className='container'>
+      <div className='containerr'>
         <h2>Family Gathering</h2>
         <p>
           We love catering for entire families. So please bring everyone along
@@ -71,7 +71,7 @@ export const specialimg = () => {
 export const specialtext = () => {
   return (
     <>
-      <div className='container'>
+      <div className='containerr'>
         <h2>Special Events</h2>
         <p>
           Whether it’s a romantic dinner or special date you’re celebrating with
@@ -114,7 +114,7 @@ export const socialimg = () => {
 export const socialtext = () => {
   return (
     <>
-      <div className='container'>
+      <div className='containerr'>
         <h2>Social Events</h2>
         <p>
           Are you looking to have a larger social event? No problem! We’re more

@@ -23,8 +23,7 @@ const formValid = ({ formErrors, ...rest }) => {
   return valid;
 };
 
-const nameinput = document.getElementsByName('name');
-const emailinput = document.getElementsByName('email');
+const form = document.querySelector('.form-container');
 
 export default class Contact extends Component {
   constructor(props) {
@@ -73,12 +72,12 @@ export default class Contact extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
+    const form = document.querySelector('.form-container');
     if (formValid(this.state) === true) {
+      form.classList.add('greenz');
       console.log(`
         --SUBMITTING--
          Name: ${this.state.name}
-        
         Email: ${this.state.email}
         
       `);

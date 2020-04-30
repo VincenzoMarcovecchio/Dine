@@ -14,10 +14,11 @@
   }
   .reservation-text {
     position: absolute;
-    top: 20%;
+    top: 10%;
     text-align: center;
     @include min-width(small) {
       width: 100%;
+      top: 20%;
     }
     @include min-width(large) {
       top: 35%;
@@ -32,7 +33,6 @@
     & h2 {
       @include header-2;
       color: #ffff;
-      margin: unset !important;
     }
     & button {
       @include button-on-dark;

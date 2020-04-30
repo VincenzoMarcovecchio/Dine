@@ -426,7 +426,6 @@ body {
   letter-spacing: 0.5px;
   margin-bottom: 1.5rem;
   color: #17192b;
-  margin: 1.7rem auto 1.5rem;
 }
 
 @media screen and (min-width: 500px) {
@@ -1227,7 +1226,7 @@ footer {
   color: #fff;
   margin-top: 1.85rem;
   font-size: calc(0.7rem + 0.75vw);
-  padding: 3.5rem 3rem;
+  padding: 3.5rem 2rem !important;
   text-align: center;
   line-height: 200%;
   height: 35rem;

@@ -7,7 +7,7 @@ footer {
   row-gap: 30px;
   @include header-1;
   font-size: calc(0.7rem + 0.75vw);
-  padding: 3.5rem 3rem;
+  padding: 3.5rem 2rem !important;
   text-align: center;
   line-height: 200%;
   height: 35rem;

@@ -23,7 +23,7 @@ footer {
     grid-template-rows: repeat(2, min-content);
     margin: 0;
     font-size: 0.9rem;
-    padding: 6.5rem 1.5rem 0 1.5rem;
+    padding: 6.5rem 1.5rem 0 1.5rem !important;
     & img {
       margin: 0 0 0 15%;
     }
@@ -37,7 +37,7 @@ footer {
     font-size: 0.7rem;
     align-items: unset;
     grid-template-rows: 95px;
-    padding: 4.5rem 10% 0 10%;
+    padding: 4.5rem 10% 0 10% !important;
     & :last-child {
       grid-column: 3/4;
     }

@@ -1144,8 +1144,8 @@ body {
 
 @media screen and (min-width: 500px) {
   .reservation {
-    -webkit-transform: translateY(6px);
-            transform: translateY(6px);
+    -webkit-transform: translateY(7px);
+            transform: translateY(7px);
   }
 }
 
@@ -1169,13 +1169,13 @@ body {
 @media screen and (min-width: 500px) {
   .reservation .reservation-text {
     width: 100%;
-    top: 20%;
+    top: 15%;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .reservation .reservation-text {
-    top: 29%;
+    top: 25%;
     left: 0;
     width: 80%;
     right: 0;
@@ -1286,7 +1286,7 @@ footer img {
         grid-template-rows: repeat(2, min-content);
     margin: 0;
     font-size: 0.9rem;
-    padding: 6.5rem 1.5rem 0 1.5rem;
+    padding: 6.5rem 1.5rem 0 1.5rem !important;
   }
   footer img {
     margin: 0 0 0 15%;
@@ -1309,7 +1309,7 @@ footer img {
             align-items: unset;
     -ms-grid-rows: 95px;
         grid-template-rows: 95px;
-    padding: 4.5rem 10% 0 10%;
+    padding: 4.5rem 10% 0 10% !important;
   }
   footer :last-child {
     -ms-grid-column: 3;

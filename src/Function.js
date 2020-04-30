@@ -131,5 +131,3 @@ export const socialtext = () => {
     </>
   );
 };
-
-export default Function;

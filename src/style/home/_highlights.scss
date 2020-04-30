@@ -101,7 +101,15 @@
       }
     }
   }
-
+  & img {
+    width: 100%;
+    margin-bottom: 2rem;
+    @include min-width(small) {
+      margin-bottom: 0;
+      width: 140px;
+      height: 99px;
+    }
+  }
   & .salmon {
     text-align: center;
     padding: 2rem 0 1.5rem;
@@ -124,17 +132,6 @@
       @include min-width(small) {
         padding-bottom: 0;
         border-bottom: 0;
-      }
-    }
-    & img {
-      width: 100%;
-      margin-bottom: 2rem;
-      position: relative;
-      @include min-width(small) {
-        margin-bottom: 0;
-
-        width: 140px;
-        height: 99px;
       }
     }
   }
@@ -164,16 +161,6 @@
         border-bottom: 0;
       }
     }
-    & img {
-      width: 100%;
-      margin-bottom: 2rem;
-      @include min-width(small) {
-        margin-bottom: 0;
-
-        width: 140px;
-        height: 99px;
-      }
-    }
   }
   & .mousse {
     text-align: center;
@@ -190,15 +177,6 @@
     }
     & p {
       @include body-2;
-    }
-    & img {
-      width: 100%;
-      margin-bottom: 2rem;
-      @include min-width(small) {
-        margin-bottom: 0;
-        width: 140px;
-        height: 99px;
-      }
     }
   }
 }

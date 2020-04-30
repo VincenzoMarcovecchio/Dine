@@ -1,9 +1,9 @@
 @import './globals/global';
 @import './globals/variables';
-@import 'hero';
-@import 'description1';
-@import 'highlights';
-@import 'image-slider';
-@import 'reservation';
+@import './home/hero';
+@import './home/description1';
+@import './home/highlights';
+@import './home/image-slider';
+@import './home/reservation';
 @import 'footer';
-@import './pages/contact';
+@import './contact/contact';

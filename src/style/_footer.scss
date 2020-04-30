@@ -14,6 +14,7 @@ footer {
 
   & img {
     margin: auto;
+    width: initial;
   }
   @include min-width(small) {
     height: 25rem;
@@ -22,26 +23,23 @@ footer {
     grid-template-rows: repeat(2, min-content);
     margin: 0;
     font-size: 0.9rem;
-    padding: 4.5rem 1.5rem 0 1.5rem;
+    padding: 6.5rem 1.5rem 0 1.5rem;
     & img {
       margin: 0 0 0 15%;
     }
     & :last-child {
       grid-column: 2/3;
-      width: 80%;
-      max-width: 377px;
     }
   }
-  @include min-width(medium) {
+  @include min-width(large) {
     height: 13rem !important;
-    grid-template-columns: 30% 27% 35%;
+    grid-template-columns: 30% 32% 35%;
     font-size: 0.7rem;
     align-items: unset;
     grid-template-rows: 95px;
-
+    padding: 4.5rem 10% 0 10%;
     & :last-child {
       grid-column: 3/4;
-      max-width: 317px;
     }
   }
 }

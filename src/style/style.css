@@ -10,9 +10,8 @@ html {
 }
 
 body {
-  font-family: 'Spartan', sans-serif;
+  font-family: 'Spartan', Arial, Helvetica, sans-serif;
   width: 100%;
-  height: 100%;
   max-width: 1440px;
   margin: auto !important;
   font-size: 100%;
@@ -106,6 +105,7 @@ body {
     left: 0;
     right: 0;
     max-width: 80%;
+    padding: 0;
   }
 }
 
@@ -190,7 +190,7 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  .logo {
+  .text-hero .logo {
     position: absolute;
     top: 5rem;
   }
@@ -215,7 +215,7 @@ body {
   .description-1 {
     width: 80%;
     margin: auto;
-    height: 55.375rem;
+    height: 57.5rem;
   }
 }
 
@@ -341,6 +341,7 @@ body {
     width: 20%;
     height: 9.5%;
     background-image: url("/images/patterns/pattern-lines.svg");
+    background-size: contain;
     z-index: 5;
   }
 }
@@ -613,6 +614,19 @@ body {
   }
 }
 
+.highlights-grids img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .highlights-grids img {
+    margin-bottom: 0;
+    width: 140px;
+    height: 99px;
+  }
+}
+
 .highlights-grids .salmon {
   text-align: center;
   padding: 2rem 0 1.5rem;
@@ -684,20 +698,6 @@ body {
   .highlights-grids .salmon p {
     padding-bottom: 0;
     border-bottom: 0;
-  }
-}
-
-.highlights-grids .salmon img {
-  width: 100%;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-@media screen and (min-width: 500px) {
-  .highlights-grids .salmon img {
-    margin-bottom: 0;
-    width: 140px;
-    height: 99px;
   }
 }
 
@@ -775,19 +775,6 @@ body {
   }
 }
 
-.highlights-grids .fillet img {
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-@media screen and (min-width: 500px) {
-  .highlights-grids .fillet img {
-    margin-bottom: 0;
-    width: 140px;
-    height: 99px;
-  }
-}
-
 .highlights-grids .mousse {
   text-align: center;
   padding: 0 0 1.5rem;
@@ -846,19 +833,6 @@ body {
   }
 }
 
-.highlights-grids .mousse img {
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-@media screen and (min-width: 500px) {
-  .highlights-grids .mousse img {
-    margin-bottom: 0;
-    width: 140px;
-    height: 99px;
-  }
-}
-
 @media screen and (min-width: 500px) {
   .description {
     text-align: left;
@@ -888,6 +862,7 @@ body {
 
 @media screen and (min-width: 1024px) {
   .image-slider {
+    width: 80%;
     margin: auto;
     height: 60rem;
     display: -webkit-box;
@@ -926,11 +901,9 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 200px;
-    right: 0;
-    margin: 0;
-    left: calc(0% + 666px);
-    top: 27rem;
+    width: 100%;
+    left: 56% !important;
+    top: 23rem;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -1000,8 +973,12 @@ body {
 
 @media screen and (min-width: 1024px) {
   .image-slider .text-slider .img-slider {
-    width: unset;
-    height: unset;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .image-slider .text-slider .img-slider:before {
+    content: '';
   }
 }
 
@@ -1066,7 +1043,7 @@ body {
 }
 
 .image-slider .text-slider button {
-  width: 13rem;
+  width: 15.5rem;
   height: 3.7rem;
   border: 1.4px solid #fff;
   color: #fff;
@@ -1109,17 +1086,9 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  .container-1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media screen and (min-width: 1024px) {
   .containerr {
     text-align: left;
-    margin: 3rem 0 0 11%;
+    margin: 3rem 0 0 12%;
   }
 }
 
@@ -1156,10 +1125,10 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .reservation {
-    -webkit-transform: translateY(6px);
-            transform: translateY(6px);
+    -webkit-transform: translateY(9px);
+            transform: translateY(9px);
   }
 }
 
@@ -1181,18 +1150,19 @@ body {
 
 @media screen and (min-width: 1024px) {
   .reservation .reservation-text {
-    top: 20%;
+    top: 35%;
     left: 0;
-    width: 90%;
+    width: 80%;
+    right: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: auto;
   }
 }
@@ -1204,6 +1174,7 @@ body {
   letter-spacing: 0.5px;
   margin-bottom: 1.5rem;
   color: #ffff;
+  margin: unset !important;
 }
 
 @media screen and (min-width: 500px) {
@@ -1277,6 +1248,7 @@ footer {
 
 footer img {
   margin: auto;
+  width: initial;
 }
 
 @media screen and (min-width: 500px) {
@@ -1290,7 +1262,7 @@ footer img {
         grid-template-rows: repeat(2, min-content);
     margin: 0;
     font-size: 0.9rem;
-    padding: 4.5rem 1.5rem 0 1.5rem;
+    padding: 6.5rem 1.5rem 0 1.5rem;
   }
   footer img {
     margin: 0 0 0 15%;
@@ -1299,28 +1271,26 @@ footer img {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
-    width: 80%;
-    max-width: 377px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   footer {
     height: 13rem !important;
-    -ms-grid-columns: 30% 27% 35%;
-        grid-template-columns: 30% 27% 35%;
+    -ms-grid-columns: 30% 32% 35%;
+        grid-template-columns: 30% 32% 35%;
     font-size: 0.7rem;
     -webkit-box-align: unset;
         -ms-flex-align: unset;
             align-items: unset;
     -ms-grid-rows: 95px;
         grid-template-rows: 95px;
+    padding: 4.5rem 10% 0 10%;
   }
   footer :last-child {
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3/4;
-    max-width: 317px;
   }
 }
 
@@ -1366,7 +1336,7 @@ footer img {
 
 @media screen and (min-width: 1024px) {
   .contact .text-hero {
-    left: -10%;
+    left: 0%;
     height: 0;
   }
   .contact .text-hero h1 {
@@ -1489,7 +1459,7 @@ footer img {
 }
 
 .form-container button {
-  width: 13rem;
+  width: 15.5rem;
   height: 3.7rem;
   border: 1.4px solid #fff;
   color: #fff;

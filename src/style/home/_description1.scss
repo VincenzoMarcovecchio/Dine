@@ -8,7 +8,7 @@
   @include min-width(large) {
     width: 80%;
     margin: auto;
-    height: 55.375rem;
+    height: 57.5rem;
   }
 }
 
@@ -81,6 +81,7 @@
         width: 20%;
         height: 9.5%;
         background-image: url('/images/patterns/pattern-lines.svg');
+        background-size: contain;
         z-index: 5;
       }
     }

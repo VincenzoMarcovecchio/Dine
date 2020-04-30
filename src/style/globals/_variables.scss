@@ -73,7 +73,7 @@ $breakpoints: (
 }
 
 @mixin button-on-ligth {
-  width: 13rem;
+  width: 15.5rem;
   height: 3.7rem;
   border: 1.4px solid #fff;
   color: #fff;
@@ -111,10 +111,6 @@ $breakpoints: (
     color: black;
   }
 }
-
-// a {
-//   @include button-on-dark;
-// }
 
 @mixin body-1 {
   font-weight: 400;

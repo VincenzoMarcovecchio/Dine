@@ -48,6 +48,7 @@
     left: 0;
     right: 0;
     max-width: 80%;
+    padding: 0;
   }
   & h1 {
     @include header-1;
@@ -76,12 +77,12 @@
     @include button-on-dark;
     margin-top: 2rem;
   }
-}
 
-.logo {
-  @include min-width(large) {
-    position: absolute;
-    top: 5rem;
+  .logo {
+    @include min-width(large) {
+      position: absolute;
+      top: 5rem;
+    }
   }
 }
 

@@ -16,6 +16,7 @@ export const gatheringimg = () => {
                ./images/homepage/family-gathering-tablet@2x.jpg 2x'
         />
         <img
+          alt='gathering events party'
           className='img-slider img-gathering'
           src='./images/homepage/family-gathering-mobile.jpg'
           srcSet='./images/homepage/family-gathering-mobile.jpg, 
@@ -61,6 +62,7 @@ export const specialimg = () => {
         <img
           className='img-slider img-special'
           src='./images/homepage/social-events-mobile.jpg'
+          alt='special events party'
           srcSet='./images/homepage/social-events-mobile@2x.jpg, 
               ./images/homepage/special-events-mobile@2x.jpg 2x'
         />
@@ -103,6 +105,7 @@ export const socialimg = () => {
         <img
           className='img-slider img-social'
           src='./images/homepage/social-events-mobile.jpg'
+          alt='social event party'
           srcSet='./images/homepage/social-events-mobile.jpg, 
               ./images/homepage/social-events-mobile@2x.jpg 2x'
         />

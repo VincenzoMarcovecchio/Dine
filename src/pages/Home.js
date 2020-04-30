@@ -12,11 +12,6 @@ import {
 } from '../Function.js';
 
 export default function Home() {
-  const myStyle = {
-    color: 'black',
-    opacity: '1',
-  };
-
   const handleChange = (e) => {
     const gathering = document.getElementById('gathering');
     const special = document.getElementById('special');
@@ -52,10 +47,6 @@ export default function Home() {
       special.classList.remove('black');
       social.classList.add('black');
     }
-  };
-
-  const click = (e) => {
-    e.target.classList.add('actives');
   };
 
   const [img, setimg] = useState(gatheringimg);
@@ -287,7 +278,3 @@ export default function Home() {
     </>
   );
 }
-
-// const img = document.querySelector(".imgage-slider");
-// const h2 = document.querySelector(".text-slider").querySelector("h2");
-// const p = document.querySelector(".text-slider").querySelector("p");

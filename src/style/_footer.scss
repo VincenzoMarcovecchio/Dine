@@ -16,7 +16,7 @@ footer {
     margin: auto;
   }
   @include min-width(small) {
-    height: 22rem;
+    height: 25rem;
     grid-template-columns: 40% 60%;
     text-align: left;
     grid-template-rows: repeat(2, min-content);
@@ -34,7 +34,7 @@ footer {
   }
   @include min-width(medium) {
     height: 13rem !important;
-    grid-template-columns: 35% 30% 47%;
+    grid-template-columns: 30% 27% 35%;
     font-size: 0.7rem;
     align-items: unset;
     grid-template-rows: 95px;

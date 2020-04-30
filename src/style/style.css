@@ -1281,7 +1281,7 @@ footer img {
 
 @media screen and (min-width: 500px) {
   footer {
-    height: 22rem;
+    height: 25rem;
     -ms-grid-columns: 40% 60%;
         grid-template-columns: 40% 60%;
     text-align: left;
@@ -1307,8 +1307,8 @@ footer img {
 @media screen and (min-width: 768px) {
   footer {
     height: 13rem !important;
-    -ms-grid-columns: 35% 30% 47%;
-        grid-template-columns: 35% 30% 47%;
+    -ms-grid-columns: 30% 27% 35%;
+        grid-template-columns: 30% 27% 35%;
     font-size: 0.7rem;
     -webkit-box-align: unset;
         -ms-flex-align: unset;
@@ -1349,6 +1349,7 @@ footer img {
 
 .contact .text-hero {
   top: 4%;
+  padding: 0;
 }
 
 @media screen and (min-width: 500px) {
@@ -1388,6 +1389,7 @@ footer img {
   color: black !important;
   white-space: nowrap;
   margin-bottom: 0.5rem !important;
+  position: relative;
 }
 
 @media screen and (min-width: 500px) {
@@ -1406,7 +1408,7 @@ footer img {
 
 @media screen and (min-width: 500px) {
   .row {
-    margin-left: 20% !important;
+    margin-right: 0;
     width: 72%;
     margin-left: auto !important;
   }
@@ -1482,6 +1484,7 @@ footer img {
             transform: translateY(-22.5rem);
     padding: 3rem;
     margin-bottom: -12rem !important;
+    width: 42% !important;
   }
 }
 
@@ -1539,7 +1542,7 @@ footer img {
   padding-bottom: 1rem;
 }
 
-.people {
+strong {
   font-weight: 700 !important;
 }
 
@@ -1555,32 +1558,37 @@ footer img {
   background-color: white !important;
 }
 
-#am .select-wrapper :focus {
-  background: url(/images/icons/icon-arrow-rotated.svg) !important;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: 18px;
+#am .select-wrapper ul > li:first-child {
+  position: relative;
 }
 
-#am .select-wrapper :focus .select-wrapper {
-  background: none;
+#am .select-wrapper ul > li:first-child :before {
+  content: '';
+  position: absolute;
+  right: 7px;
+  top: 0;
+  bottom: 22px;
+  left: 0;
+  background: url(/images/icons/icon-arrow.svg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-repeat: no-repeat;
 }
 
 #am ul:not(.browser-default) > li :hover {
   background: url(/images/icons/icon-check.svg) !important;
-  background-position: right center !important;
+  background-position: 85% !important;
   background-repeat: no-repeat !important;
-  background-size: 40px;
+  background-size: 100%;
 }
 
-#am ul:not(.browser-default) > li {
-  background-color: white;
+#am ul:not(.browser-default) > li:first-child :hover {
+  background: none !important;
 }
 
 #am .select-dropdown,
 #am .dropdown-trigger {
   text-align: left !important;
-  padding-left: 5px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1639,4 +1647,59 @@ footer img {
     width: 150px;
     height: 68px;
   }
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  padding-left: 5px !important;
+}
+
+.select-dropdown .disabled {
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.plus {
+  cursor: pointer;
+}
+
+.minus {
+  cursor: pointer;
+}
+
+.plus :active {
+  opacity: 0.5;
+}
+
+.minus :active {
+  opacity: 0.5;
+}
+
+.error-color {
+  color: red !important;
+}
+
+.error {
+  border-color: red !important;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 10px;
+  margin-left: 15px;
+}
+
+.errorMessage-pick {
+  position: absolute;
+  bottom: 11px;
+  left: -15px;
+  color: red;
+  font-size: 14px;
+  font-size: 10px;
+  margin-left: 15px;
+}
+
+.input-field .error input {
+  border-color: red !important;
 }

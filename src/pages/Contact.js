@@ -1,25 +1,59 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import Footer from '../components/Footer';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css';
+import { Link } from 'react-router-dom';
+const emailRegex = RegExp(
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+);
+
+const formValid = ({ formErrors, ...rest }) => {
+  let valid = true;
+
+  // validate form errors being empty
+  Object.values(formErrors).forEach((val) => {
+    val.length > 0 && (valid = false);
+  });
+
+  // validate the form was filled out
+  Object.values(rest).forEach((val) => {
+    val === '' && (valid = false);
+  });
+
+  return valid;
+};
+
+const nameinput = document.getElementsByName('name');
+const emailinput = document.getElementsByName('email');
+
 export default class Contact extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      firstName: null,
-      email: null,
-      month: null,
-      day: null,
-      year: null,
-      hour: null,
-      minutes: null,
-      am: null,
-      people: null,
+      name: '',
+      email: '',
+      month: '',
+      day: '',
+      year: '',
+      hour: '',
+      minutes: '',
+      am: '',
+      people: 1,
       formErrors: {
+        name: '',
         date: '',
         time: '',
         email: '',
       },
+    };
+
+    this.howmany = (people) => {
+      if (people > 1) {
+        return <strong className='people'>people</strong>;
+      } else {
+        return <strong>person</strong>;
+      }
     };
   }
 
@@ -27,7 +61,84 @@ export default class Contact extends Component {
     M.AutoInit();
   }
 
+  incrementItem = () => {
+    this.setState({ people: this.state.people + 1 });
+  };
+
+  decreaseItem = () => {
+    this.setState({
+      people: this.state.people === 0 ? 0 : this.state.people - 1,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (formValid(this.state) === true) {
+      console.log(`
+        --SUBMITTING--
+         Name: ${this.state.name}
+        
+        Email: ${this.state.email}
+        
+      `);
+    } else {
+      this.setState({
+        formErrors: {
+          ...this.state.formErrors,
+          date: 'This field is incomplete',
+          time: 'This field is incomplete',
+          email: 'This field is required',
+        },
+      });
+
+      console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+    }
+  };
+
+  handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    let formErrors = this.state.formErrors;
+
+    switch (name) {
+      case 'name':
+        formErrors.name =
+          value.length < 3 ? 'minimum 3 characaters required' : '';
+        break;
+
+      case 'email':
+        formErrors.email = emailRegex.test(value)
+          ? ''
+          : 'This field is required';
+        break;
+      case 'month':
+        formErrors.date = value.length === '' ? 'This field is incomplete' : '';
+        break;
+      case 'day':
+        formErrors.date = value.length === '' ? 'This field is incomplete' : '';
+        break;
+      case 'year':
+        formErrors.date = value.length === '' ? 'This field is incomplete' : '';
+        break;
+      case 'hour':
+        formErrors.time = value.length === '' ? 'This field is incomplete' : '';
+        break;
+      case 'minutes':
+        formErrors.time = value.length === '' ? 'This field is incomplete' : '';
+        break;
+      case 'am':
+        formErrors.time = value.length === '' ? 'This field is incomplete' : '';
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
+  };
+
   render() {
+    const { formErrors } = this.state;
     return (
       <div>
         <div className='contact'>
@@ -50,7 +161,9 @@ export default class Contact extends Component {
             />
           </picture>
           <div className='text-hero'>
-            <img className='logo' src='/images/icons/logo.svg' alt='logo' />
+            <Link to='/'>
+              <img className='logo' src='/images/icons/logo.svg' alt='logo' />
+            </Link>
             <h1> Reservation</h1>
             <p>
               We can't wait to host you. If you have any special requirements
@@ -60,45 +173,99 @@ export default class Contact extends Component {
             <button className='btn-on-dark'>Reserve place</button>
           </div>
           <div className='form-container container'>
-            <form>
+            <form onSubmit={this.handleSubmit} noValidate>
               <div className='input-field col s12'>
-                <input id='name' type='text' className='validate' />
-                <label for='name'>Name</label>
+                <input
+                  noValidate
+                  onChange={this.handleChange}
+                  id='name'
+                  name='name'
+                  type='text'
+                  className={formErrors.name.length > 0 ? 'error' : ''}
+                />
+
+                <label
+                  className={formErrors.name.length > 0 ? 'error-color' : ''}
+                  for='name'
+                >
+                  Name
+                </label>
               </div>
               <div className='input-field col s12'>
-                <input id='email' type='email' autocomplete='off' />
-                <label for='email'>Email</label>
+                <input
+                  noValidate
+                  className={formErrors.email.length > 0 ? ' error' : ''}
+                  onChange={this.handleChange}
+                  id='email'
+                  name='email'
+                  type='email'
+                />
+                {formErrors.email.length > 0 && (
+                  <span className='errorMessage'>{formErrors.email}</span>
+                )}
+                <label
+                  className={formErrors.email.length > 0 ? 'error-color' : ''}
+                  for='email'
+                >
+                  Email
+                </label>
               </div>
 
               <div id='date' className='row row-date'>
-                <div className='input-field col s4'>
-                  <label className='pick' for='month'>
+                <div
+                  className={
+                    formErrors.date.length > 0
+                      ? 'input-field col s4 error'
+                      : 'input-field col s4'
+                  }
+                >
+                  <label
+                    className={
+                      formErrors.date.length > 0 ? ' pick error-color' : 'pick'
+                    }
+                    for='month'
+                  >
                     Pick a date
+                    {formErrors.date.length > 0 && (
+                      <span className='errorMessage-pick'>
+                        {formErrors.date}
+                      </span>
+                    )}
                   </label>
-                  <select id='month'>
+                  <select
+                    className={formErrors.date.length > 0 ? ' error' : ''}
+                    onChange={this.handleChange}
+                    name='month'
+                    id='month'
+                  >
                     <option value='' disabled selected>
                       MM
                     </option>
-                    <option value='1'>Janaury</option>
-                    <option value='2'>February</option>
-                    <option value='3'>March</option>
-                    <option value='4'>April</option>
-                    <option value='5'>May</option>
-                    <option value='6'>June</option>
-                    <option value='7'>July</option>
-                    <option value='8'>August</option>
-                    <option value='9'>September</option>
+                    <option value='01'>Janaury</option>
+                    <option value='02'>February</option>
+                    <option value='03'>March</option>
+                    <option value='04'>April</option>
+                    <option value='05'>May</option>
+                    <option value='06'>June</option>
+                    <option value='07'>July</option>
+                    <option value='08'>August</option>
+                    <option value='09'>September</option>
                     <option value='10'>October</option>
                     <option value='11'>November</option>
                     <option value='12'>December</option>
                   </select>
                 </div>
                 <div className='input-field col s4'>
-                  <select id='day'>
+                  <select
+                    onChange={this.handleChange}
+                    className={formErrors.date.length > 0 ? ' error' : ''}
+                    name='day'
+                    id='day'
+                  >
                     <option value='' disabled selected>
                       DD
                     </option>
-                    <option value='00'>00</option>
+
                     <option value='01'>01</option>
                     <option value='02'>02</option>
                     <option value='03'>03</option>
@@ -133,7 +300,12 @@ export default class Contact extends Component {
                   </select>
                 </div>
                 <div className='input-field col s4'>
-                  <select id='year'>
+                  <select
+                    className={formErrors.date.length > 0 ? ' error' : ''}
+                    onChange={this.handleChange}
+                    name='year'
+                    id='year'
+                  >
                     <option value='' disabled selected>
                       YYYY
                     </option>
@@ -145,10 +317,25 @@ export default class Contact extends Component {
               </div>
               <div id='time' className='row row-time'>
                 <div className='input-field col s4'>
-                  <label className='pick' for='hour'>
+                  <label
+                    className={
+                      formErrors.time.length > 0 ? ' pick error-color' : 'pick'
+                    }
+                    for='hour'
+                  >
+                    {formErrors.time.length > 0 && (
+                      <span className='errorMessage-pick'>
+                        {formErrors.time}
+                      </span>
+                    )}
                     Pick a time
                   </label>
-                  <select id='hour'>
+                  <select
+                    className={formErrors.time.length > 0 ? ' error' : ''}
+                    onChange={this.handleChange}
+                    name='hour'
+                    id='hour'
+                  >
                     <option value='' disabled selected>
                       8
                     </option>
@@ -168,8 +355,13 @@ export default class Contact extends Component {
                 </div>
 
                 <div className='input-field col s4'>
-                  <select id='minutes'>
-                    <option value='00'>00</option>
+                  <select
+                    className={formErrors.time.length > 0 ? ' error' : ''}
+                    onChange={this.handleChange}
+                    name='minutes'
+                    id='minutes'
+                  >
+                    <option value=''>00</option>
                     <option value='01'>01</option>
                     <option value='02'>02</option>
                     <option value='03'>03</option>
@@ -232,20 +424,29 @@ export default class Contact extends Component {
                   </select>
                 </div>
                 <div id='am' className='input-field col s4'>
-                  <select>
+                  <select
+                    className={formErrors.time.length > 0 ? ' error' : ''}
+                    onChange={this.handleChange}
+                    name='am'
+                  >
+                    <option value='' disabled selected>
+                      AM
+                    </option>
                     <option value='AM'>AM</option>
                     <option value='PM'>PM</option>
                   </select>
                 </div>
               </div>
               <div className='input-field col 12 persons'>
-                <span className='minus'>
+                <span className='minus' onClick={this.decreaseItem}>
                   <svg xmlns='http://www.w3.org/2000/svg' width='7' height='3'>
                     <path fill='#9E7F66' d='M6.425 2.977V.601H.629v2.376z' />
                   </svg>
                 </span>
-                <strong className='people'> 2 People</strong>
-                <span className='plus'>
+                <strong className='people'>
+                  {this.state.people} {this.howmany(this.state.people)}
+                </strong>
+                <span className='plus' onClick={this.incrementItem}>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='10'
@@ -258,7 +459,9 @@ export default class Contact extends Component {
                   </svg>
                 </span>
               </div>
-              <button className='button-on-ligth'>make a reservation</button>
+              <button type='submit' className='button-on-ligth'>
+                make a reservation
+              </button>
             </form>
           </div>
           <div className='lines'></div>

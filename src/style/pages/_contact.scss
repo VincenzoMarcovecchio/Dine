@@ -20,6 +20,7 @@
 
   & .text-hero {
     top: 4%;
+    padding: 0;
     @include min-width(small) {
       & h1 {
         margin-top: 7.5rem;
@@ -59,6 +60,7 @@
   color: black !important;
   white-space: nowrap;
   margin-bottom: 0.5rem !important;
+  position: relative;
 
   @include min-width(small) {
     top: 0 !important;
@@ -71,7 +73,7 @@
   margin-right: -0.75rem;
   width: 100%;
   @include min-width(small) {
-    margin-left: 20% !important;
+    margin-right: 0;
     width: 72%;
     margin-left: auto !important;
   }
@@ -112,7 +114,7 @@
   padding: 2rem;
   transform: translateY(-9rem);
   z-index: 30000000 !important;
-  box-shadow: 0px 54px 74px -50px #5c6779;
+  box-shadow: $box-shadow;
   background-color: white;
   position: relative;
   @include min-width(small) {
@@ -125,6 +127,7 @@
     transform: translateY(-22.5rem);
     padding: 3rem;
     margin-bottom: -12rem !important;
+    width: 42% !important;
   }
 
   button {
@@ -157,8 +160,7 @@
   border-bottom: 1px solid $shuttleGray !important;
   padding-bottom: 1rem;
 }
-
-.people {
+strong {
   font-weight: 700 !important;
 }
 .check {
@@ -172,29 +174,36 @@
     background-repeat: no-repeat;
     background-size: 18px;
     background-color: white !important;
-  }
-  & .select-wrapper :focus {
-    background: url(/images/icons/icon-arrow-rotated.svg) !important;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 18px;
-    & .select-wrapper {
-      background: none;
+    & ul > li:first-child {
+      position: relative;
+    }
+    & ul > li:first-child :before {
+      content: '';
+      position: absolute;
+      right: 7px;
+      top: 0;
+      bottom: 22px;
+      left: 0;
+      background: url(/images/icons/icon-arrow.svg);
+      transform: rotate(180deg);
+      background-repeat: no-repeat;
     }
   }
+
   & ul:not(.browser-default) > li :hover {
     background: url(/images/icons/icon-check.svg) !important;
-    background-position: right center !important;
+    background-position: 85% !important;
     background-repeat: no-repeat !important;
-    background-size: 40px;
+    background-size: 100%;
   }
-  & ul:not(.browser-default) > li {
-    background-color: white;
+
+  & ul:not(.browser-default) > li:first-child :hover {
+    background: none !important;
   }
+
   & .select-dropdown,
   .dropdown-trigger {
     text-align: left !important;
-    padding-left: 5px;
     box-sizing: border-box;
 
     @include min-width(large) {
@@ -210,6 +219,7 @@
     }
   }
 }
+
 .input-field {
   & label {
     font-size: 18px !important;
@@ -245,5 +255,55 @@
     z-index: -33333333555555555533 !important;
     width: 150px;
     height: 68px;
+  }
+}
+.dropdown-content li > a,
+.dropdown-content li > span {
+  padding-left: 5px !important;
+}
+
+.select-dropdown .disabled {
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.plus {
+  cursor: pointer;
+}
+.minus {
+  cursor: pointer;
+}
+.plus :active {
+  opacity: 0.5;
+}
+.minus :active {
+  opacity: 0.5;
+}
+
+.error-color {
+  color: red !important;
+}
+.error {
+  border-color: red !important;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 10px;
+  margin-left: 15px;
+}
+.errorMessage-pick {
+  position: absolute;
+  bottom: 11px;
+  left: -15px;
+  color: red;
+  font-size: 14px;
+  font-size: 10px;
+  margin-left: 15px;
+}
+.input-field .error {
+  & input {
+    border-color: red !important;
   }
 }

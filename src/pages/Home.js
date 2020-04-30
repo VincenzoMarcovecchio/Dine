@@ -51,6 +51,7 @@ export default function Home() {
 
   const [img, setimg] = useState(gatheringimg);
   const [text, settext] = useState(gatheringtext);
+
   return (
     <>
       <header className='hero'>
@@ -226,6 +227,7 @@ export default function Home() {
       </section>
       <section className='image-slider'>
         <div className='text-slider'>
+          <span className='patterns-lines'></span>
           <div className='container-1'>{img}</div>
           <div className='btn-group'>
             <span

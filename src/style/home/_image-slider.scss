@@ -14,6 +14,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 45%;
+      left: -12.5%;
+      top: -1px;
+      height: 40%;
+      background: url(/images/patterns/pattern-curve-top-right.svg);
+      background-size: cover;
+      background-position: right;
+      z-index: -5000000;
+    }
   }
 
   & .btn-group {
@@ -28,10 +40,10 @@
     @include min-width(large) {
       position: absolute;
       flex-direction: column;
-      width: 100%;
       left: 56% !important;
       top: 23rem;
       align-items: flex-start;
+      width: 200px;
     }
 
     & .btn-slider {
@@ -78,6 +90,7 @@
     & .img-slider {
       width: 100%;
       box-shadow: $box-shadow;
+      position: relative;
       @include min-width(small) {
         width: 70%;
       }
@@ -85,10 +98,6 @@
         width: 100%;
         height: 100%;
         position: relative;
-
-        &:before {
-          content: '';
-        }
       }
     }
 
@@ -156,5 +165,20 @@
     left: 50%;
     right: 100%;
     top: 17%;
+  }
+}
+
+.patterns-lines {
+  @include min-width(large) {
+    position: absolute;
+    width: 128px;
+    height: 97px;
+    top: -9%;
+    left: -5%;
+    background: url(/images/patterns/pattern-lines.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 50000000000000;
   }
 }

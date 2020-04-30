@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css';
 import { Link } from 'react-router-dom';
+
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -105,7 +106,6 @@ export default class Contact extends Component {
         formErrors.name =
           value.length < 3 ? 'minimum 3 characaters required' : '';
         break;
-
       case 'email':
         formErrors.email = emailRegex.test(value)
           ? ''

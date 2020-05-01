@@ -39,7 +39,7 @@ body {
   .line {
     margin-left: 0;
   }
-  
+}
   .line:after {
   top: 7.5px;
 }

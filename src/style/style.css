@@ -307,7 +307,7 @@ body {
   font-weight: 400;
   font-size: calc(12.3px + 0.75vw);
   line-height: 160%;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.31px;
 }
 
 @media screen and (min-width: 1024px) {

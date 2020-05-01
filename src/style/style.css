@@ -39,6 +39,9 @@ body {
   .line {
     margin-left: 0;
   }
+  
+  .line:after {
+  top: 7.5px;
 }
 
 .hero {
@@ -215,7 +218,7 @@ body {
   .description-1 {
     width: 80%;
     margin: auto;
-    height: 57.5rem;
+    height: 60rem;
   }
 }
 
@@ -1251,7 +1254,7 @@ footer {
   color: #fff;
   margin-top: 1.85rem;
   font-size: calc(0.7rem + 0.75vw);
-  padding: 3.5rem 2rem !important;
+  padding: 6.5rem 2rem !important;
   text-align: center;
   line-height: 200%;
   height: 35rem;
@@ -1286,7 +1289,7 @@ footer img {
         grid-template-rows: repeat(2, min-content);
     margin: 0;
     font-size: 0.9rem;
-    padding: 6.5rem 1.5rem 0 1.5rem !important;
+    padding: 7.5rem 1.5rem 0 1.5rem !important;
   }
   footer img {
     margin: 0 0 0 15%;
@@ -1309,7 +1312,7 @@ footer img {
             align-items: unset;
     -ms-grid-rows: 95px;
         grid-template-rows: 95px;
-    padding: 4.5rem 10% 0 10% !important;
+    padding: 5.5rem 10% 0 10% !important;
   }
   footer :last-child {
     -ms-grid-column: 3;

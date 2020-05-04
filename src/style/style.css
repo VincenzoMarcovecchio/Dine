@@ -346,7 +346,7 @@ body {
     background-image: url("/images/patterns/pattern-lines.svg");	
     background-size: contain;	
     z-index: 5;	
-    visibility:hidden;
+    display:none !important;
   }
 }
 
@@ -367,7 +367,7 @@ body {
     background-image: url("/images/patterns/pattern-lines.svg");
     background-repeat: no-repeat;
     z-index: 5;
-    visibility: visible;
+    display:block !important;
   }
 }
 

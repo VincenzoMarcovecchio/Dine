@@ -336,7 +336,18 @@ body {
             justify-content: space-between;
     margin: 0rem auto;
   }
- 
+   .description-2 picture::after {	
+    content: '';	
+    position: absolute;	
+    top: 25%;	
+    right: 3%;	
+    width: 20%;	
+    height: 9.5%;	
+    background-image: url("/images/patterns/pattern-lines.svg");	
+    background-size: contain;	
+    z-index: 5;	
+    visibility:hidden;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -356,6 +367,7 @@ body {
     background-image: url("/images/patterns/pattern-lines.svg");
     background-repeat: no-repeat;
     z-index: 5;
+    visibility: visible;
   }
 }
 

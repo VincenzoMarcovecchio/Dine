@@ -12,7 +12,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-ReactDOMServer.renderToString(<App />);
+// ReactDOMServer.renderToString(<App />);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

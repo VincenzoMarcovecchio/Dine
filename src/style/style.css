@@ -1247,7 +1247,7 @@ footer {
       grid-template-columns: 1fr;
   -ms-grid-rows: (100px)[3];
       grid-template-rows: repeat(3, 100px);
-  row-gap: 30px;
+  row-gap: 10px;
   font-weight: 300;
   font-size: calc(1.55rem + 0.75vw);
   line-height: 129%;
@@ -1258,7 +1258,7 @@ footer {
   padding: 6.5rem 2rem !important;
   text-align: center;
   line-height: 200%;
-  height: 35rem;
+  height: 33rem;
 }
 
 @media screen and (min-width: 500px) {

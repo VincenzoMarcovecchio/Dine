@@ -81,8 +81,8 @@ export default function Home() {
             Experience our seasonal menu in beautiful country surroundings. Eat
             the freshest produce from the comfort of our farmhouse.
           </p>
-          <Link className='btn-on-dark' to='/contact'>
-            book a table
+          <Link  to='/contact'>
+    <button className='btn-on-dark'> book a table </button>
           </Link>
         </div>
       </header>

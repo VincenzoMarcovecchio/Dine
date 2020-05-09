@@ -527,7 +527,7 @@ body {
   .highlights-text {
     text-align: left;
     width: 44%;
-    max-width: 480px;
+    max-width: 450px;
     margin: 0 auto 0 0;
   }
 }

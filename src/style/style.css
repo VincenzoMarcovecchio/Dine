@@ -28,10 +28,10 @@ body {
 .line:after {
   content: '';
   position: absolute;
-  left: 11px;
+  left: 19px;
   top: 50%;
   width: 55px;
-  height: 1.25px;
+  height: 1.15px;
   background-color: #9e7f66;
 }
 
@@ -184,7 +184,7 @@ body {
   cursor: pointer;
   -webkit-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .text-hero .btn-on-dark:hover {
@@ -360,8 +360,8 @@ body {
     position: absolute;
     top: 13rem;
     right: -81px;
-    width: 128px;
-    height: 97px;
+    width: 138px;
+    height: 100px;
     bottom: 1px;
     background-image: url("/images/patterns/pattern-lines.svg");
     background-repeat: no-repeat;

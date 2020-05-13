@@ -9,6 +9,10 @@ html {
   scroll-behaviour:smooth;
 }
 
+h3 {
+  margin:0;
+}
+
 body {
   font-family: 'Spartan', Arial, Helvetica, sans-serif;
   width: 100%;
